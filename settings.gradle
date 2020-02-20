@@ -1,16 +1,28 @@
 import de.fayard.dependencies.DependenciesPlugin
 import de.fayard.versions.RefreshVersionsSetup
 
+pluginManagement {
+    repositories {
+        mavenLocal()
+        gradlePluginPortal()
+    }
+}
 
 buildscript {
     repositories {
+        mavenLocal() // Only necessary for testing
         gradlePluginPortal()
+        mavenCentral()
     }
     dependencies.classpath("de.fayard:dependencies:0.5.6")
 }
 
+plugins {
+    id("com.gradle.enterprise").version("3.1.1")
+}
 
 RefreshVersionsSetup.bootstrap(settings, DependenciesPlugin.artifactVersionKeyRules)
+
 
 include ':app:k9mail'
 include ':app:k9mail-jmap'
