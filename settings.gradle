@@ -1,3 +1,17 @@
+import de.fayard.dependencies.DependenciesPlugin
+import de.fayard.versions.RefreshVersionsSetup
+
+
+buildscript {
+    repositories {
+        gradlePluginPortal()
+    }
+    dependencies.classpath("de.fayard:dependencies:0.5.6")
+}
+
+
+RefreshVersionsSetup.bootstrap(settings, DependenciesPlugin.artifactVersionKeyRules)
+
 include ':app:k9mail'
 include ':app:k9mail-jmap'
 include ':app:ui'
