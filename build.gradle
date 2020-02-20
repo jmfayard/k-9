@@ -55,9 +55,6 @@ buildscript {
         classpath "org.jlleitschuh.gradle:ktlint-gradle:9.1.1"
     }
 }
-plugins {
-    id("de.fayard.refreshVersions")
-}
 
 project.ext {
     testCoverage = project.hasProperty('testCoverage')
